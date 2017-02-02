@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.greendustbd.leasure.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/mv"
+            android:layout_width="175dp"
+            android:layout_height="219dp"
+            android:scaleType="centerCrop"
+            android:layout_margin="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/mv"/>
+
+        <ImageView
+            android:id="@+id/bk"
+            android:layout_width="175dp"
+            android:layout_height="222dp"
+            android:layout_margin="5dp"
+            android:paddingLeft="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bk" />
+
+    </LinearLayout>
+
+</RelativeLayout>
