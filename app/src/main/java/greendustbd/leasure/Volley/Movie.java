@@ -1,21 +1,19 @@
 package greendustbd.leasure.Volley;
 
-import java.util.ArrayList;
-
 public class Movie {
 	private String title,thumbnailUrl;
-	private String date;
+	private String genres;
 	private String director;
-	private ArrayList<String> actor;
+	private String actor;
 
 	public Movie() {
 	}
 
-	public Movie(String name, String thumbnailUrl, String date, String director,
-			ArrayList<String> actor) {
+	public Movie(String name, String thumbnailUrl, String genres, String director,
+			String actor) {
 		this.title = name;
 		this.thumbnailUrl = thumbnailUrl;
-		this.date = date;
+		this.genres = genres;
 		this.director = director;
 		this.actor = actor;
 	}
@@ -37,12 +35,12 @@ public class Movie {
 		this.thumbnailUrl = thumbnailUrl;
 	}
 
-	public String getDate() {
-		return date;
+	public String getGenres() {
+		return genres;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setGenres(String genres) {
+		this.genres = genres;
 	}
 
 	public String getDirector() {
@@ -53,11 +51,11 @@ public class Movie {
 		this.director = director;
 	}
 
-	public ArrayList<String> getActor() {
+	public String getActor() {
 		return actor;
 	}
 
-	public void setActor(ArrayList<String> actor) {
+	public void setActor(String actor) {
 		this.actor = actor;
 	}
 

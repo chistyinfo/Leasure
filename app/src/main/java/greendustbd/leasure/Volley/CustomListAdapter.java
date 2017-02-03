@@ -61,7 +61,7 @@ public class CustomListAdapter extends BaseAdapter {
 		TextView title = (TextView) convertView.findViewById(R.id.title);
 		TextView director = (TextView) convertView.findViewById(R.id.director);
 		TextView actor = (TextView) convertView.findViewById(R.id.actor);
-		TextView date = (TextView) convertView.findViewById(R.id.date);
+		TextView genres = (TextView) convertView.findViewById(R.id.genres);
 
 		// getting movie data for the row
 		Movie m = movieItems.get(position);
@@ -73,19 +73,13 @@ public class CustomListAdapter extends BaseAdapter {
 		title.setText(m.getTitle());
 		
 		// Director
-		director.setText("Director: " + String.valueOf(m.getDirector()));
-		
+		director.setText("Direction: " + String.valueOf(m.getDirector()));
 		// Actor
-		String genreStr = "";
-		for (String str : m.getActor()) {
-			genreStr += str + ", ";
-		}
-		genreStr = genreStr.length() > 0 ? genreStr.substring(0,
-				genreStr.length() - 2) : genreStr;
-		actor.setText(genreStr);
+		actor.setText("Stars: " + String.valueOf(m.getActor()));
+		// Genres
+		genres.setText("Genres: " + String.valueOf(m.getGenres()));
 		
-		// game date
-		date.setText(String.valueOf(m.getDate()));
+
 
 		return convertView;
 	}
