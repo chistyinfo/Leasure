@@ -59,8 +59,8 @@ public class CustomListAdapter extends BaseAdapter {
 		NetworkImageView thumbNail = (NetworkImageView) convertView
 				.findViewById(R.id.thumbnail);
 		TextView title = (TextView) convertView.findViewById(R.id.title);
-		TextView time = (TextView) convertView.findViewById(R.id.time);
-		TextView vs = (TextView) convertView.findViewById(R.id.vs);
+		TextView director = (TextView) convertView.findViewById(R.id.director);
+		TextView actor = (TextView) convertView.findViewById(R.id.actor);
 		TextView date = (TextView) convertView.findViewById(R.id.date);
 
 		// getting movie data for the row
@@ -72,17 +72,17 @@ public class CustomListAdapter extends BaseAdapter {
 		// title
 		title.setText(m.getTitle());
 		
-		// time
-		time.setText("Starting Time: " + String.valueOf(m.getTime()));
+		// Director
+		director.setText("Director: " + String.valueOf(m.getDirector()));
 		
-		// genre
+		// Actor
 		String genreStr = "";
-		for (String str : m.getGenre()) {
+		for (String str : m.getActor()) {
 			genreStr += str + ", ";
 		}
 		genreStr = genreStr.length() > 0 ? genreStr.substring(0,
 				genreStr.length() - 2) : genreStr;
-		vs.setText(genreStr);
+		actor.setText(genreStr);
 		
 		// game date
 		date.setText(String.valueOf(m.getDate()));

@@ -5,19 +5,19 @@ import java.util.ArrayList;
 public class Movie {
 	private String title,thumbnailUrl;
 	private String date;
-	private String timeing;
-	private ArrayList<String> genre;
+	private String director;
+	private ArrayList<String> actor;
 
 	public Movie() {
 	}
 
-	public Movie(String name, String thumbnailUrl, String date, String timeing,
-			ArrayList<String> genre) {
+	public Movie(String name, String thumbnailUrl, String date, String director,
+			ArrayList<String> actor) {
 		this.title = name;
 		this.thumbnailUrl = thumbnailUrl;
 		this.date = date;
-		this.timeing = timeing;
-		this.genre = genre;
+		this.director = director;
+		this.actor = actor;
 	}
 
 	public String getTitle() {
@@ -45,20 +45,20 @@ public class Movie {
 		this.date = date;
 	}
 
-	public String getTime() {
-		return timeing;
+	public String getDirector() {
+		return director;
 	}
 
-	public void setTimeing(String timeing) {
-		this.timeing = timeing;
+	public void setDirector(String director) {
+		this.director = director;
 	}
 
-	public ArrayList<String> getGenre() {
-		return genre;
+	public ArrayList<String> getActor() {
+		return actor;
 	}
 
-	public void setGenre(ArrayList<String> genre) {
-		this.genre = genre;
+	public void setActor(ArrayList<String> actor) {
+		this.actor = actor;
 	}
 
 }

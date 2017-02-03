@@ -62,7 +62,7 @@
                     apps:typeface="robotoBlack" />
 
                 <greendustbd.leasure.font.RobotoTextView
-                    android:id="@+id/vs"
+                    android:id="@+id/actor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -74,7 +74,7 @@
                 <!-- Rating -->
 
                 <greendustbd.leasure.font.RobotoTextView
-                    android:id="@+id/time"
+                    android:id="@+id/director"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
