@@ -4,16 +4,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SingleActivity extends AppCompatActivity {
     private ImageView imageView;
     private TextView textView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +31,17 @@ public class SingleActivity extends AppCompatActivity {
         findViewById(R.id.imv).setBackgroundDrawable(background);
 
 
-        String _textView=getIntent().getStringExtra("Url");
+        String _textView=getIntent().getStringExtra("Details");
         textView.setText(_textView);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+////                        .setAction("Action", null).show();
+//
+//            }
+//        });
     }
 }
