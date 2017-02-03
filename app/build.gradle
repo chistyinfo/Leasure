@@ -31,5 +31,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.1.1'
     //Volley
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    //Appbajar
+    compile 'com.aapbd:appbajar-lib:1.0.2'
+    
     testCompile 'junit:junit:4.12'
 }

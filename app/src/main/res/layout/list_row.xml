@@ -52,7 +52,7 @@
 
                 <!-- Movie Title -->
 
-                <greendustbd.screol.font.RobotoTextView
+                <greendustbd.leasure.font.RobotoTextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                     android:elevation="5dp"
                     apps:typeface="robotoBlack" />
 
-                <greendustbd.screol.font.RobotoTextView
+                <greendustbd.leasure.font.RobotoTextView
                     android:id="@+id/vs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                     apps:typeface="robotoBlack" />
                 <!-- Rating -->
 
-                <greendustbd.screol.font.RobotoTextView
+                <greendustbd.leasure.font.RobotoTextView
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                     android:elevation="5dp"
                     apps:typeface="robotoBlack" />
 
-                <greendustbd.screol.font.RobotoTextView
+                <greendustbd.leasure.font.RobotoTextView
                     android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
