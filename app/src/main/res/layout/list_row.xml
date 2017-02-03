@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:id="@+id/cv"
+    android:elevation="8dp"
+    android:paddingBottom="10dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginTop="2dp"
+    android:background="@color/main_color_grey_100"
+    card_view:cardPreventCornerOverlap="false"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="16dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+           android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="2">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginLeft="2dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/google_cards_background_bottom"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- Movie Title -->
+
+                <greendustbd.screol.font.RobotoTextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/material_green_500"
+                    android:textSize="16sp"
+                    android:elevation="5dp"
+                    apps:typeface="robotoBlack" />
+
+                <greendustbd.screol.font.RobotoTextView
+                    android:id="@+id/vs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/material_purple_500"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/title"
+                    android:elevation="5dp"
+                    apps:typeface="robotoBlack" />
+                <!-- Rating -->
+
+                <greendustbd.screol.font.RobotoTextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/title"
+                    android:textSize="14sp"
+                    android:elevation="5dp"
+                    apps:typeface="robotoBlack" />
+
+                <greendustbd.screol.font.RobotoTextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/material_red_400"
+                    android:layout_below="@id/time"
+                    android:textSize="14sp"
+                    android:elevation="5dp"
+                    apps:typeface="robotoBlack" />
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
