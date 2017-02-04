@@ -50,7 +50,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <!-- Book Title -->
+                <!-- Drama Title -->
 
                 <greendustbd.leasure.font.RobotoTextView
                     android:id="@+id/title"

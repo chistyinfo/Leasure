@@ -1,4 +1,4 @@
-package greendustbd.leasure.BookVolley;
+package greendustbd.leasure.DramaVolley;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,26 +18,26 @@ import greendustbd.leasure.AppController;
 import greendustbd.leasure.R;
 
 
-public class CustomBookListAdapter extends BaseAdapter {
+public class CustomDramaListAdapter extends BaseAdapter {
 	private Activity activity;
 	private LayoutInflater inflater;
-	private List<Book> bookItems;
+	private List<Drama> dramaItems;
 	ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-	public CustomBookListAdapter(AppCompatActivity appCompatActivity, List<Book> bookItems) {
+	public CustomDramaListAdapter(AppCompatActivity appCompatActivity, List<Drama> dramaItems) {
 		this.activity = appCompatActivity;
-		this.bookItems = bookItems;
+		this.dramaItems = dramaItems;
 
 	}
 
 	@Override
 	public int getCount() {
-		return bookItems.size();
+		return dramaItems.size();
 	}
 
 	@Override
 	public Object getItem(int location) {
-		return bookItems.get(location);
+		return dramaItems.get(location);
 	}
 
 	@Override
@@ -52,19 +52,18 @@ public class CustomBookListAdapter extends BaseAdapter {
 			inflater = (LayoutInflater) activity
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		if (convertView == null)
-			convertView = inflater.inflate(R.layout.list_book_row, null);
+			convertView = inflater.inflate(R.layout.list_drama_row, null);
 
 		if (imageLoader == null)
 			imageLoader = AppController.getInstance().getImageLoader();
 		NetworkImageView thumbNail = (NetworkImageView) convertView
 				.findViewById(R.id.thumbnail);
 		TextView title = (TextView) convertView.findViewById(R.id.title);
-		TextView publisher = (TextView) convertView.findViewById(R.id.publisher);
-		TextView writer = (TextView) convertView.findViewById(R.id.writer);
-
+		TextView director = (TextView) convertView.findViewById(R.id.ddirector);
+		TextView stars = (TextView) convertView.findViewById(R.id.stars);
 
 		// getting movie data for the row
-		Book m = bookItems.get(position);
+		Drama m = dramaItems.get(position);
 
 		// thumbnail image
 		thumbNail.setImageUrl(m.getThumbnailUrl(), imageLoader);
@@ -72,11 +71,10 @@ public class CustomBookListAdapter extends BaseAdapter {
 		// Title/Name
 		title.setText(m.getTitle());
 		
-		// Publisher
-		publisher.setText("Publisher: " + String.valueOf(m.getPublisher()));
-
-		// Writer
-		writer.setText("Writer: " + String.valueOf(m.getWriter()));
+		// Dorector
+		director.setText("Director: " + String.valueOf(m.getDirector()));
+		// Stars
+		stars.setText("Stars: " + String.valueOf(m.getStars()));
 
 
 

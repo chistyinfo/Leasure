@@ -27,7 +27,12 @@
             android:name=".SingleBookActivity"
             android:label="@string/title_activity_scrolling_book"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".BookActivity"></activity>
+        <activity android:name=".BookActivity" />
+        <activity android:name=".DramaActivity" />
+        <activity
+            android:name=".SingleDramaActivity"
+            android:label="@string/title_activity_single_drama"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
