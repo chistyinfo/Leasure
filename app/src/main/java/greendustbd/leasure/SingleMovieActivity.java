@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SingleActivity extends AppCompatActivity {
+public class SingleMovieActivity extends AppCompatActivity {
     private ImageView imageView;
     private TextView textView;
 
@@ -16,12 +16,16 @@ public class SingleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single);
+        setContentView(R.layout.activity_single_movie);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
         imageView= (ImageView) findViewById(R.id.imv);
         textView= (TextView) findViewById(R.id.txv);
+
+
+
+
 
         Bundle extras = getIntent().getExtras();
         byte[] b = extras.getByteArray("image");
@@ -33,6 +37,11 @@ public class SingleActivity extends AppCompatActivity {
 
         String _textView=getIntent().getStringExtra("Details");
         textView.setText(_textView);
+
+
+
+
+
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {

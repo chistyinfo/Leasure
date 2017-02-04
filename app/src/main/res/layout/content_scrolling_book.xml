@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="greendustbd.leasure.SingleActivity"
-    tools:showIn="@layout/activity_single">
+    tools:context="greendustbd.leasure.SingleBookActivity"
+    tools:showIn="@layout/activity_single_book">
 
-    <greendustbd.leasure.font.RobotoTextView
-        android:id="@+id/txv"
+    <TextView
+        android:id="@+id/txvb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"

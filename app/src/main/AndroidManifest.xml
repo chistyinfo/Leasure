@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="greendustbd.leasure">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -19,9 +20,14 @@
         </activity>
         <activity android:name=".MovieActivity" />
         <activity
-            android:name=".SingleActivity"
+            android:name=".SingleMovieActivity"
             android:label="@string/title_activity_single"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SingleBookActivity"
+            android:label="@string/title_activity_scrolling_book"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BookActivity"></activity>
     </application>
 
 </manifest>

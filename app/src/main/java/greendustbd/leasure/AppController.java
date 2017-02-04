@@ -8,7 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
-import greendustbd.leasure.Volley.LruBitmapCache;
+import greendustbd.leasure.MovieVolley.LruBitmapCache;
 
 /**
  * Created by chisty on 2/3/2017.

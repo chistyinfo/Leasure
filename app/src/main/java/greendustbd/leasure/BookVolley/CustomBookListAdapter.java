@@ -1,4 +1,4 @@
-package greendustbd.leasure.Volley;
+package greendustbd.leasure.BookVolley;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,26 +18,26 @@ import greendustbd.leasure.AppController;
 import greendustbd.leasure.R;
 
 
-public class CustomListAdapter extends BaseAdapter {
+public class CustomBookListAdapter extends BaseAdapter {
 	private Activity activity;
 	private LayoutInflater inflater;
-	private List<Movie> movieItems;
+	private List<Book> bookItems;
 	ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-	public CustomListAdapter(AppCompatActivity appCompatActivity, List<Movie> movieItems) {
+	public CustomBookListAdapter(AppCompatActivity appCompatActivity, List<Book> bookItems) {
 		this.activity = appCompatActivity;
-		this.movieItems = movieItems;
+		this.bookItems = bookItems;
 
 	}
 
 	@Override
 	public int getCount() {
-		return movieItems.size();
+		return bookItems.size();
 	}
 
 	@Override
 	public Object getItem(int location) {
-		return movieItems.get(location);
+		return bookItems.get(location);
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class CustomListAdapter extends BaseAdapter {
 			inflater = (LayoutInflater) activity
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		if (convertView == null)
-			convertView = inflater.inflate(R.layout.list_row, null);
+			convertView = inflater.inflate(R.layout.list_book_row, null);
 
 		if (imageLoader == null)
 			imageLoader = AppController.getInstance().getImageLoader();
@@ -64,7 +64,7 @@ public class CustomListAdapter extends BaseAdapter {
 		TextView genres = (TextView) convertView.findViewById(R.id.genres);
 
 		// getting movie data for the row
-		Movie m = movieItems.get(position);
+		Book m = bookItems.get(position);
 
 		// thumbnail image
 		thumbNail.setImageUrl(m.getThumbnailUrl(), imageLoader);

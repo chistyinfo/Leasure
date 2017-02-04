@@ -1,4 +1,4 @@
-package greendustbd.leasure.Volley;
+package greendustbd.leasure.MovieVolley;
 
 public class Movie {
 	private String title,thumbnailUrl;
