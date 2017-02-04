@@ -61,7 +61,6 @@ public class CustomBookListAdapter extends BaseAdapter {
 		TextView title = (TextView) convertView.findViewById(R.id.title);
 		TextView publisher = (TextView) convertView.findViewById(R.id.publisher);
 		TextView writer = (TextView) convertView.findViewById(R.id.writer);
-		TextView genres = (TextView) convertView.findViewById(R.id.genres);
 
 		// getting movie data for the row
 		Book m = bookItems.get(position);

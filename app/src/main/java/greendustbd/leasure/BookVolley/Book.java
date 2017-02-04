@@ -8,7 +8,7 @@ public class Book {
 	public Book() {
 	}
 
-	public Book(String name, String thumbnailUrl, String genres, String publisher,
+	public Book(String name, String thumbnailUrl, String publisher,
 				String writer) {
 		this.title = name;
 		this.thumbnailUrl = thumbnailUrl;
@@ -38,7 +38,7 @@ public class Book {
 		return publisher;
 	}
 
-	public void setPublisher(String director) {
+	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
 
@@ -46,7 +46,7 @@ public class Book {
 		return writer;
 	}
 
-	public void setWriter(String actor) {
+	public void setWriter(String writer) {
 		this.writer = writer;
 	}
 
