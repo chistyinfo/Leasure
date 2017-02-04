@@ -91,9 +91,8 @@ public class BookActivity extends AppCompatActivity {
                             Book book = new Book();
                             book.setTitle(obj.getString("title"));
                             book.setThumbnailUrl(obj.getString("image"));
-                            book.setDirector(obj.getString("director"));
-                            book.setActor(obj.getString("actor"));
-                            book.setGenres(obj.getString("genres"));
+                            book.setPublisher(obj.getString("publisher"));
+                            book.setWriter(obj.getString("writer"));
                             //url capturing form server
                             DetailsArray[i] = obj.getString("details");
 

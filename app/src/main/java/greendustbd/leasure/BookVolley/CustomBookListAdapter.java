@@ -59,8 +59,8 @@ public class CustomBookListAdapter extends BaseAdapter {
 		NetworkImageView thumbNail = (NetworkImageView) convertView
 				.findViewById(R.id.thumbnail);
 		TextView title = (TextView) convertView.findViewById(R.id.title);
-		TextView director = (TextView) convertView.findViewById(R.id.director);
-		TextView actor = (TextView) convertView.findViewById(R.id.actor);
+		TextView publisher = (TextView) convertView.findViewById(R.id.publisher);
+		TextView writer = (TextView) convertView.findViewById(R.id.writer);
 		TextView genres = (TextView) convertView.findViewById(R.id.genres);
 
 		// getting movie data for the row
@@ -69,16 +69,14 @@ public class CustomBookListAdapter extends BaseAdapter {
 		// thumbnail image
 		thumbNail.setImageUrl(m.getThumbnailUrl(), imageLoader);
 		
-		// title
+		// Title/Name
 		title.setText(m.getTitle());
 		
-		// Director
-		director.setText("Direction: " + String.valueOf(m.getDirector()));
-		// Actor
-		actor.setText("Stars: " + String.valueOf(m.getActor()));
-		// Genres
-		genres.setText("Genres: " + String.valueOf(m.getGenres()));
-		
+		// Publisher
+		publisher.setText("Publisher: " + String.valueOf(m.getPublisher()));
+		// Writer
+		writer.setText("Writer: " + String.valueOf(m.getWriter()));
+
 
 
 		return convertView;

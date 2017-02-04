@@ -2,20 +2,18 @@ package greendustbd.leasure.BookVolley;
 
 public class Book {
 	private String title,thumbnailUrl;
-	private String genres;
-	private String director;
-	private String actor;
+	private String publisher;
+	private String writer;
 
 	public Book() {
 	}
 
-	public Book(String name, String thumbnailUrl, String genres, String director,
-				String actor) {
+	public Book(String name, String thumbnailUrl, String genres, String publisher,
+				String writer) {
 		this.title = name;
 		this.thumbnailUrl = thumbnailUrl;
-		this.genres = genres;
-		this.director = director;
-		this.actor = actor;
+		this.publisher = publisher;
+		this.writer = writer;
 	}
 
 	public String getTitle() {
@@ -35,28 +33,21 @@ public class Book {
 		this.thumbnailUrl = thumbnailUrl;
 	}
 
-	public String getGenres() {
-		return genres;
+
+	public String getPublisher() {
+		return publisher;
 	}
 
-	public void setGenres(String genres) {
-		this.genres = genres;
+	public void setPublisher(String director) {
+		this.publisher = publisher;
 	}
 
-	public String getDirector() {
-		return director;
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setDirector(String director) {
-		this.director = director;
-	}
-
-	public String getActor() {
-		return actor;
-	}
-
-	public void setActor(String actor) {
-		this.actor = actor;
+	public void setWriter(String actor) {
+		this.writer = writer;
 	}
 
 }
