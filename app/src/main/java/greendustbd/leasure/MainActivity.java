@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         mv= (ImageView) findViewById(R.id.mv);
         bk= (ImageView) findViewById(R.id.bk);
         dr= (ImageView) findViewById(R.id.dr);
+        mu= (ImageView) findViewById(R.id.mu);
 
         mv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,DramaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,MusicActivity.class);
                 startActivity(intent);
             }
         });

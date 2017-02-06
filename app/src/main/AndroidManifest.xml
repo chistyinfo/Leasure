@@ -32,7 +32,8 @@
         <activity
             android:name=".SingleDramaActivity"
             android:label="@string/title_activity_single_drama"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MusicActivity"></activity>
     </application>
 
 </manifest>
