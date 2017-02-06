@@ -33,7 +33,11 @@
             android:name=".SingleDramaActivity"
             android:label="@string/title_activity_single_drama"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MusicActivity"></activity>
+        <activity android:name=".MusicActivity" />
+        <activity
+            android:name=".SingleMusicActivity"
+            android:label="@string/title_activity_single_music"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
