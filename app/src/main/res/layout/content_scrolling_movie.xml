@@ -11,10 +11,10 @@
 
     <greendustbd.leasure.font.RobotoTextView
         android:id="@+id/txv"
-        style="@style/TextViewAppearance.Display1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:textSize="20sp"
         android:elevation="5dp"
         app:typeface="robotoBlack"
         />
