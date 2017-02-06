@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
+    
     defaultConfig {
         applicationId "greendustbd.leasure"
         minSdkVersion 21
@@ -31,7 +32,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.1.1'
 
     //Volley
-    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    compile 'com.android.volley:volley:1.0.0'
     //Appbajar
     compile 'com.aapbd:appbajar-lib:1.0.2'
     
