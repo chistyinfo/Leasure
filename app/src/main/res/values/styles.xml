@@ -17,4 +17,61 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Ripple related styles in movie -->
+    <style name="RippleStyle_mv">
+        <item name="rippleOverlay">true</item>
+        <item name="rippleCol">@color/movie_screen1</item>
+        <item name="rippleAlpha">0.7</item>
+        <item name="rippleDimension">45dp</item>
+        <item name="rippleHover">true</item>
+        <item name="rippleDuration">200</item>
+        <item name="rippleFadeDuration">50</item>
+        <item name="rippleBackground">@android:color/transparent</item>
+        <item name="rippleDelayClick">true</item>
+        <item name="ripplePersistent">false</item>
+        <item name="rippleInAdapter">false</item>
+    </style>
+    <!-- Ripple related styles in book -->
+    <style name="RippleStyle_bk">
+        <item name="rippleOverlay">true</item>
+        <item name="rippleCol">@color/book_screen2</item>
+        <item name="rippleAlpha">0.7</item>
+        <item name="rippleDimension">45dp</item>
+        <item name="rippleHover">true</item>
+        <item name="rippleDuration">200</item>
+        <item name="rippleFadeDuration">50</item>
+        <item name="rippleBackground">@android:color/transparent</item>
+        <item name="rippleDelayClick">true</item>
+        <item name="ripplePersistent">false</item>
+        <item name="rippleInAdapter">false</item>
+    </style>
+    <!-- Ripple related styles in drama -->
+    <style name="RippleStyle_dr">
+        <item name="rippleOverlay">true</item>
+        <item name="rippleCol">@color/drama_screen3</item>
+        <item name="rippleAlpha">0.7</item>
+        <item name="rippleDimension">45dp</item>
+        <item name="rippleHover">true</item>
+        <item name="rippleDuration">200</item>
+        <item name="rippleFadeDuration">50</item>
+        <item name="rippleBackground">@android:color/transparent</item>
+        <item name="rippleDelayClick">true</item>
+        <item name="ripplePersistent">false</item>
+        <item name="rippleInAdapter">false</item>
+    </style>
+    <!-- Ripple related styles in music -->
+    <style name="RippleStyle_mu">
+        <item name="rippleOverlay">true</item>
+        <item name="rippleCol">@color/music_screen4</item>
+        <item name="rippleAlpha">0.7</item>
+        <item name="rippleDimension">45dp</item>
+        <item name="rippleHover">true</item>
+        <item name="rippleDuration">200</item>
+        <item name="rippleFadeDuration">50</item>
+        <item name="rippleBackground">@android:color/transparent</item>
+        <item name="rippleDelayClick">true</item>
+        <item name="ripplePersistent">false</item>
+        <item name="rippleInAdapter">false</item>
+    </style>
+
 </resources>

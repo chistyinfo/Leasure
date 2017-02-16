@@ -5,17 +5,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.aapbd.appbajarlib.notification.BusyDialog;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.NetworkImageView;
 
@@ -43,6 +48,7 @@ public class MovieActivity extends AppCompatActivity {
     String[] DetailsArray;
     private Context con;
     private CustomListAdapter adapter;
+    private WebView webView;
 
 
     @Override
@@ -52,6 +58,7 @@ public class MovieActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_movie);
+        con=this;
 
         listView = (ListView) findViewById(greendustbd.leasure.R.id.list);
         adapter = new CustomListAdapter(this, movieList);
@@ -80,12 +87,20 @@ public class MovieActivity extends AppCompatActivity {
         );
 
 
+        if (isNetworkAvailable()) {
+
+            final BusyDialog busydialog=new BusyDialog(con,true,"Loading........");
+            busydialog.show();
+
+
         // Creating volley request obj
         JsonArrayRequest movieReq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
                         Log.d(TAG, response.toString());
+
+                        busydialog.dismis();
 
 
                         // Parsing json
@@ -122,10 +137,33 @@ public class MovieActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+
+                if (busydialog != null) {
+
+                    busydialog.dismis();
+
+                }
+
 
             }
         });
         AppController.getInstance().addToRequestQueue(movieReq);
+
+        }else {
+
+            webView= (WebView) findViewById(R.id.wvMv);
+            webView.loadUrl("file:///android_asset/notification.png");
+
+        }
+    }
+
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 
