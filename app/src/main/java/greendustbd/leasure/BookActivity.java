@@ -20,6 +20,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.NativeExpressAdView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,6 +52,10 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
         con=this;
+
+        NativeExpressAdView adView = (NativeExpressAdView)findViewById(R.id.adViewb);
+        adView.loadAd(new AdRequest.Builder().build());
+
         blistView = (ListView) findViewById(greendustbd.leasure.R.id.book_list);
         badapter = new CustomBookListAdapter(this, bookList);
         blistView.setAdapter(badapter);
@@ -136,7 +142,7 @@ public class BookActivity extends AppCompatActivity {
 
         }else {
 
-            webView= (WebView) findViewById(R.id.wvMv);
+            webView= (WebView) findViewById(R.id.wvBk);
             webView.loadUrl("file:///android_asset/notification.png");
 
         }
@@ -147,6 +153,15 @@ public class BookActivity extends AppCompatActivity {
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+    public void onBackPressed() {
+
+        Intent intent = new Intent(BookActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+
     }
 
 }

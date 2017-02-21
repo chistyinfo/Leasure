@@ -22,6 +22,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.NativeExpressAdView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -57,6 +59,9 @@ public class MovieActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_movie);
         con=this;
+
+        NativeExpressAdView adView = (NativeExpressAdView)findViewById(R.id.adViewm);
+        adView.loadAd(new AdRequest.Builder().build());
 
         listView = (ListView) findViewById(greendustbd.leasure.R.id.list);
         adapter = new CustomListAdapter(this, movieList);
@@ -162,6 +167,15 @@ public class MovieActivity extends AppCompatActivity {
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+    public void onBackPressed() {
+
+        Intent intent = new Intent(MovieActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+
     }
 
 
