@@ -1,6 +1,5 @@
 package greendustbd.leasure;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -42,7 +41,6 @@ public class MovieActivity extends AppCompatActivity {
 
     // Movies json url
     private static final String url = "http://192.168.0.100/leasure/movies.json";
-    private ProgressDialog pDialog;
     private List<Movie> movieList = new ArrayList<Movie>();
     private ListView listView;
     String[] DetailsArray;
@@ -132,7 +130,7 @@ public class MovieActivity extends AppCompatActivity {
                         // notifying list adapter about data changes
                         // so that it renders the list view with updated data
                         adapter.notifyDataSetChanged();
-//
+
                     }
                 }, new Response.ErrorListener() {
             @Override

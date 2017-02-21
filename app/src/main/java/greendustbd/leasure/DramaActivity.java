@@ -5,15 +5,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.aapbd.appbajarlib.notification.BusyDialog;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.NetworkImageView;
 
@@ -39,6 +44,7 @@ public class DramaActivity extends AppCompatActivity {
     private ListView dlistView;
     String[] DetailsArray;
     private Context con;
+    private WebView webView;
     private CustomDramaListAdapter dadapter;
 
 
@@ -46,6 +52,7 @@ public class DramaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drama);
+        con=this;
 
         dlistView = (ListView) findViewById(greendustbd.leasure.R.id.drama_list);
         dadapter = new CustomDramaListAdapter(this, dramaList);
@@ -73,7 +80,10 @@ public class DramaActivity extends AppCompatActivity {
                                         }
         );
 
+        if (isNetworkAvailable()) {
 
+            final BusyDialog busydialog=new BusyDialog(con,true,"Loading........");
+            busydialog.show();
 
 
         // Creating volley request obj
@@ -82,6 +92,8 @@ public class DramaActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONArray response) {
                         Log.d(TAG, response.toString());
+
+                        busydialog.dismis();
 
 
 
@@ -118,12 +130,32 @@ public class DramaActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+
+                if (busydialog != null) {
+
+                    busydialog.dismis();
+
+                }
+
 
             }
         });
-        AppController.getInstance().addToRequestQueue(dramaReq);
+            AppController.getInstance().addToRequestQueue(dramaReq);
+
+        }else {
+
+            webView= (WebView) findViewById(R.id.wvDr);
+            webView.loadUrl("file:///android_asset/notification.png");
+
+        }
     }
 
-
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 
 }

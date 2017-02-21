@@ -5,15 +5,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.aapbd.appbajarlib.notification.BusyDialog;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.NetworkImageView;
 
@@ -39,12 +44,14 @@ public class MusicActivity extends AppCompatActivity {
     private ListView mlistView;
     String[] DetailsArray;
     private Context con;
+    private WebView webView;
     private CustomMusicListAdapter madapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+        con=this;
 
         mlistView = (ListView) findViewById(R.id.music_list);
         madapter = new CustomMusicListAdapter(this, musicList);
@@ -72,12 +79,21 @@ public class MusicActivity extends AppCompatActivity {
                                         }
         );
 
+        if (isNetworkAvailable()) {
+
+            final BusyDialog busydialog=new BusyDialog(con,true,"Loading........");
+            busydialog.show();
+
+
             // Creating volley request obj
             JsonArrayRequest musicReq = new JsonArrayRequest(url,
                     new Response.Listener<JSONArray>() {
                         @Override
                         public void onResponse(JSONArray response) {
                             Log.d(TAG, response.toString());
+
+                            busydialog.dismis();
+
 
 
                             // Parsing json
@@ -107,19 +123,37 @@ public class MusicActivity extends AppCompatActivity {
                             // notifying list adapter about data changes
                             // so that it renders the list view with updated data
                             madapter.notifyDataSetChanged();
-
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
+                    VolleyLog.d(TAG, "Error: " + error.getMessage());
+
+                    if (busydialog != null) {
+
+                        busydialog.dismis();
+
+                    }
+
 
                 }
             });
             AppController.getInstance().addToRequestQueue(musicReq);
 
+        }else {
 
+            webView= (WebView) findViewById(R.id.wvMu);
+            webView.loadUrl("file:///android_asset/notification.png");
 
         }
+        }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
     }
 
 

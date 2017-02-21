@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
+    android:padding="3dp"
     android:background="@color/material_skyblue_500"
     android:fitsSystemWindows="true"
     tools:context="greendustbd.leasure.SingleBookActivity">
