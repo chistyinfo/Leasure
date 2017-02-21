@@ -41,7 +41,7 @@ public class MovieActivity extends AppCompatActivity {
     private static final String TAG = MovieActivity.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://192.168.0.103/leasure/movies.json";
+    private static final String url = "http://192.168.0.100/leasure/movies.json";
     private ProgressDialog pDialog;
     private List<Movie> movieList = new ArrayList<Movie>();
     private ListView listView;

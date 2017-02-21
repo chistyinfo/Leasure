@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="greendustbd.leasure.SingleMusicActivity"
+    android:background="@color/main_color_grey_100"
     tools:showIn="@layout/activity_single_music">
 
     <greendustbd.leasure.font.RobotoTextView

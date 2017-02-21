@@ -33,7 +33,7 @@ public class BookActivity extends AppCompatActivity {
     private static final String TAG = MovieActivity.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://192.168.0.103/leasure/books.json";
+    private static final String url = "http://192.168.0.100/leasure/books.json";
     private ProgressDialog pDialog;
     private List<Book> bookList = new ArrayList<Book>();
     private ListView blistView;
