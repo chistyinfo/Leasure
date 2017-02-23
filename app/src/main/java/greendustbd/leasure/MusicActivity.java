@@ -38,7 +38,7 @@ public class MusicActivity extends AppCompatActivity {
     private static final String TAG = MusicActivity.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://192.168.0.100/leasure/music.json";
+    private static final String url = "http://greendust.netau.net/leasure/music.json";
     private ProgressDialog pDialog;
     private List<Music> musicList = new ArrayList<Music>();
     private ListView mlistView;

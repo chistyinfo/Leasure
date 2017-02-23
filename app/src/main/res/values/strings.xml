@@ -8,6 +8,10 @@
 
     <string name="native_TEST">ca-app-pub-3940256099942544/6300978111</string>
 
+    //Native Earning
+    <string name="native_ad"> ca-app-pub-2233261441949271/4359539543</string>
+
+
     <string name="title_activity_single_drama">SingleDramaActivity</string>
     <string name="title_activity_single_music">SingleMusicActivity</string>
 </resources>

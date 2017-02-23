@@ -32,7 +32,7 @@ public class SingleDramaActivity extends AppCompatActivity {
 
         //InterstitialAd
                 mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-2233261441949271/3022407145");
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {

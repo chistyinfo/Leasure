@@ -40,7 +40,7 @@ public class DramaActivity extends AppCompatActivity {
     private static final String TAG = MovieActivity.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://192.168.0.100/leasure/dramas.json";
+    private static final String url = "http://greendust.netau.net/leasure/dramas.json";
     private ProgressDialog pDialog;
     private List<Drama> dramaList = new ArrayList<Drama>();
     private ListView dlistView;
