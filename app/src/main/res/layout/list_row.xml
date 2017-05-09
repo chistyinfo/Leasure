@@ -38,6 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
+                    android:padding="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_marginLeft="2dp"/>
 
@@ -48,6 +49,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/google_cards_background_bottom"
                 android:layout_weight="1"
+                android:layout_marginLeft="2dp"
                 android:orientation="vertical">
 
                 <!-- Drama Title -->

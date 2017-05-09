@@ -33,6 +33,52 @@
 
             <RelativeLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/relativelayoutbk"
+                android:background="@color/main_color_grey_100"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="2.5dp"
+                android:layout_marginTop="5dp"
+                android:elevation="8dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+
+                <greendustbd.leasure.font.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:textSize="45sp"
+                    android:gravity="center"
+                    android:text="বই"
+                    android:textColor="#000000"
+                    android:layout_centerHorizontal="true" />
+
+                <greendustbd.leasure.MaterialRippleLayout
+                    style="@style/RippleStyle_bk"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/bk"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="16dp"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/ic_book" />
+
+                </greendustbd.leasure.MaterialRippleLayout>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/relativelayout"
                 android:background="@color/main_color_grey_100"
                 android:layout_weight="1"
@@ -76,51 +122,7 @@
 
 
             </RelativeLayout>
-            <RelativeLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/relativelayoutbk"
-                android:background="@color/main_color_grey_100"
-                android:layout_weight="1"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="2.5dp"
-                android:layout_marginTop="5dp"
-                android:elevation="8dp"
-                android:layout_marginBottom="2.5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
 
-
-                <greendustbd.leasure.font.RobotoTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="1dp"
-                    android:textSize="45sp"
-                    android:gravity="center"
-                    android:text="বই"
-                    android:textColor="#000000"
-                    android:layout_centerHorizontal="true" />
-
-                <greendustbd.leasure.MaterialRippleLayout
-                    style="@style/RippleStyle_bk"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/bk"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:elevation="16dp"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_book" />
-
-                </greendustbd.leasure.MaterialRippleLayout>
-
-
-
-
-            </RelativeLayout>
 
 
 
@@ -206,7 +208,7 @@
                     android:layout_margin="1dp"
                     android:gravity="bottom"
                     android:textSize="45sp"
-                    android:text="গান"
+                    android:text="অ্যাপ"
                     android:textColor="#000000"
                     android:layout_centerHorizontal="true"/>
 
@@ -223,7 +225,7 @@
                     android:layout_weight="1"
                     android:padding="5dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_music"/>
+                    app:srcCompat="@drawable/ic_android"/>
                 </greendustbd.leasure.MaterialRippleLayout>
 
 

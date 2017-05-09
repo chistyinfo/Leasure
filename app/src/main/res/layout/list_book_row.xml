@@ -47,6 +47,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/google_cards_background_bottom"
             android:layout_weight="1"
+            android:layout_marginLeft="2dp"
             android:orientation="vertical">
 
             <!-- Drama Title -->

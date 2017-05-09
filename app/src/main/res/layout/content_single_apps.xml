@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:layout_marginTop="2dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="greendustbd.leasure.SingleMusicActivity"
+    tools:context="greendustbd.leasure.SingleAppsActivity"
     android:background="@color/main_color_grey_100"
-    tools:showIn="@layout/activity_single_music">
+    tools:showIn="@layout/activity_single_apps">
 
     <greendustbd.leasure.font.RobotoTextView
-        android:id="@+id/txm"
+        android:id="@+id/txma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"

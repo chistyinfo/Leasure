@@ -1,4 +1,4 @@
-package greendustbd.leasure.MusicVolley;
+package greendustbd.leasure.AppsVolley;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,26 +18,26 @@ import greendustbd.leasure.AppController;
 import greendustbd.leasure.R;
 
 
-public class CustomMusicListAdapter extends BaseAdapter {
+public class CustomAppsListAdapter extends BaseAdapter {
 	private Activity activity;
 	private LayoutInflater inflater;
-	private List<Music> musicItems;
+	private List<Apps> appsItems;
 	ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-	public CustomMusicListAdapter(AppCompatActivity appCompatActivity, List<Music> musicItems) {
+	public CustomAppsListAdapter(AppCompatActivity appCompatActivity, List<Apps> appsItems) {
 		this.activity = appCompatActivity;
-		this.musicItems = musicItems;
+		this.appsItems = appsItems;
 
 	}
 
 	@Override
 	public int getCount() {
-		return musicItems.size();
+		return appsItems.size();
 	}
 
 	@Override
 	public Object getItem(int location) {
-		return musicItems.get(location);
+		return appsItems.get(location);
 	}
 
 	@Override
@@ -52,17 +52,17 @@ public class CustomMusicListAdapter extends BaseAdapter {
 			inflater = (LayoutInflater) activity
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		if (convertView == null)
-			convertView = inflater.inflate(R.layout.list_music_row, null);
+			convertView = inflater.inflate(R.layout.list_apps_row, null);
 
 		if (imageLoader == null)
 			imageLoader = AppController.getInstance().getImageLoader();
 		NetworkImageView thumbNail = (NetworkImageView) convertView
 				.findViewById(R.id.thumbnail);
 		TextView title = (TextView) convertView.findViewById(R.id.title);
-		TextView singer = (TextView) convertView.findViewById(R.id.singer);
+		TextView singer = (TextView) convertView.findViewById(R.id.publisher);
 
 		// getting movie data for the row
-		Music m = musicItems.get(position);
+		Apps m = appsItems.get(position);
 
 		// thumbnail image
 		thumbNail.setImageUrl(m.getThumbnailUrl(), imageLoader);
@@ -70,8 +70,8 @@ public class CustomMusicListAdapter extends BaseAdapter {
 		// title
 		title.setText(m.getTitle());
 
-		// Singer
-		singer.setText("Singer: " + String.valueOf(m.getSinger()));
+		// Apps Publisher
+		singer.setText("Publisher: " + String.valueOf(m.getPublisher()));
 		
 
 

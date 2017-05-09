@@ -1,18 +1,18 @@
-package greendustbd.leasure.MusicVolley;
+package greendustbd.leasure.AppsVolley;
 
-public class Music {
+public class Apps {
 	private String title,thumbnailUrl;
-	private String singer;
+	private String publisher;
 	private String details;
 
 
-	public Music() {
+	public Apps() {
 	}
 
-	public Music(String name, String thumbnailUrl, String singer) {
+	public Apps(String name, String thumbnailUrl, String publisher) {
 		this.title = name;
 		this.thumbnailUrl = thumbnailUrl;
-		this.singer = singer;
+		this.publisher = publisher;
 
 	}
 
@@ -33,12 +33,12 @@ public class Music {
 		this.thumbnailUrl = thumbnailUrl;
 	}
 
-	public String getSinger() {
-		return singer;
+	public String getPublisher() {
+		return publisher;
 	}
 
-	public void setSinger(String singer) {
-		this.singer = singer;
+	public void setPublisher(String singer) {
+		this.publisher = singer;
 	}
 
 

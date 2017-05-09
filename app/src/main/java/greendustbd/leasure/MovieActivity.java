@@ -42,7 +42,7 @@ public class MovieActivity extends AppCompatActivity {
     private static final String TAG = MovieActivity.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://greendust.netau.net/leasure/movies.json";
+    private static final String url = "https://greendustbdplus.000webhostapp.com/Leasure/movies.json";
     private List<Movie> movieList = new ArrayList<Movie>();
     private ListView listView;
     String[] DetailsArray;

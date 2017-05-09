@@ -21,6 +21,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.NativeExpressAdView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,33 +32,37 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import greendustbd.leasure.MusicVolley.CustomMusicListAdapter;
-import greendustbd.leasure.MusicVolley.Music;
+import greendustbd.leasure.AppsVolley.Apps;
+import greendustbd.leasure.AppsVolley.CustomAppsListAdapter;
 
-public class MusicActivity extends AppCompatActivity {
+public class AppsActivity extends AppCompatActivity {
     // Log tag
-    private static final String TAG = MusicActivity.class.getSimpleName();
+    private static final String TAG = AppsActivity.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://greendust.netau.net/leasure/music.json";
+    private static final String url = "https://greendustbdplus.000webhostapp.com/Leasure/apps.json";
     private ProgressDialog pDialog;
-    private List<Music> musicList = new ArrayList<Music>();
-    private ListView mlistView;
+    private List<Apps> appsList = new ArrayList<Apps>();
+    private ListView alistView;
     String[] DetailsArray;
+    String[] urlStrArray;
     private Context con;
     private WebView webView;
-    private CustomMusicListAdapter madapter;
+    private CustomAppsListAdapter aadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music);
+        setContentView(R.layout.activity_apps);
         con=this;
 
-        mlistView = (ListView) findViewById(R.id.music_list);
-        madapter = new CustomMusicListAdapter(this, musicList);
-        mlistView.setAdapter(madapter);
-        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        NativeExpressAdView adView = (NativeExpressAdView)findViewById(R.id.adViewa);
+        adView.loadAd(new AdRequest.Builder().build());
+
+        alistView = (ListView) findViewById(R.id.apps_list);
+        aadapter = new CustomAppsListAdapter(this, appsList);
+        alistView.setAdapter(aadapter);
+        alistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view,
@@ -69,10 +75,11 @@ public class MusicActivity extends AppCompatActivity {
                                                 byte[] imgByte = baos.toByteArray();
 
 
-                                                Intent intent = new Intent(MusicActivity.this, SingleMusicActivity.class);
+                                                Intent intent = new Intent(AppsActivity.this, SingleAppsActivity.class);
                                                 intent.putExtra("Details", DetailsArray[position]);
+                                                intent.putExtra("url", urlStrArray[position]);
                                                 intent.putExtra("image", imgByte);
-                                                MusicActivity.this.startActivity(intent);
+                                                AppsActivity.this.startActivity(intent);
 
 
                                             }
@@ -86,7 +93,7 @@ public class MusicActivity extends AppCompatActivity {
 
 
             // Creating volley request obj
-            JsonArrayRequest musicReq = new JsonArrayRequest(url,
+            JsonArrayRequest appsReq = new JsonArrayRequest(url,
                     new Response.Listener<JSONArray>() {
                         @Override
                         public void onResponse(JSONArray response) {
@@ -96,23 +103,27 @@ public class MusicActivity extends AppCompatActivity {
 
 
 
-                            // Parsing json
+                            // Parsing details
                             DetailsArray = new String[response.length()];
+                            // Parsing url
+                            urlStrArray = new String[response.length()];
 
 
                             for (int i = 0; i < response.length(); i++) {
                                 try {
 
                                     JSONObject obj = response.getJSONObject(i);
-                                    Music music = new Music();
-                                    music.setTitle(obj.getString("title"));
-                                    music.setThumbnailUrl(obj.getString("image"));
-                                    music.setSinger(obj.getString("singer"));
-                                    //url capturing form server
+                                    Apps apps = new Apps();
+                                    apps.setTitle(obj.getString("title"));
+                                    apps.setThumbnailUrl(obj.getString("image"));
+                                    apps.setPublisher(obj.getString("publisher"));
+                                    //details capturing form server
                                     DetailsArray[i] = obj.getString("details");
+                                    //url capturing form server
+                                    urlStrArray[i] = obj.getString("url");
 
                                     // adding movie to movies array
-                                    musicList.add(music);
+                                    appsList.add(apps);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -122,7 +133,7 @@ public class MusicActivity extends AppCompatActivity {
 
                             // notifying list adapter about data changes
                             // so that it renders the list view with updated data
-                            madapter.notifyDataSetChanged();
+                            aadapter.notifyDataSetChanged();
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -138,11 +149,11 @@ public class MusicActivity extends AppCompatActivity {
 
                 }
             });
-            AppController.getInstance().addToRequestQueue(musicReq);
+            AppController.getInstance().addToRequestQueue(appsReq);
 
         }else {
 
-            webView= (WebView) findViewById(R.id.wvMu);
+            webView= (WebView) findViewById(R.id.wvAP);
             webView.loadUrl("file:///android_asset/notification.png");
 
         }
